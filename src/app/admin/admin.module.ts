@@ -10,7 +10,7 @@ import {CreatePageComponent} from "./create-page/create-page.component";
 const routes: Routes = [
   {
     path: '', component: AdminLayoutComponent, children: [
-      {path: '', redirectTo: 'admin/login'},
+      {path: '', redirectTo: 'login',pathMatch:'full'},
       {path: 'login', component: LoginPageComponent},
       {path: 'create', component: CreatePageComponent},
       {path: 'post/:id/edit', component: EditPageComponent},
@@ -22,7 +22,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
   ],
   exports: [
     RouterModule
