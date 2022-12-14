@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PostPageComponent } from './post-page/post-page.component';
-import { MainLayoutComponent } from './shared/main-layout/main-layout.component';
+import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { CreatePageComponent } from './admin/create-page/create-page.component';
 import { EditPageComponent } from './admin/edit-page/edit-page.component';
 import { DashboardPageComponent } from './admin/dashboard-page/dashboard-page.component';
 import { LoginPageComponent } from './admin/login-page/login-page.component';
 import { AdminLayoutComponent } from './admin/shared/components/admin-layout/admin-layout.component';
+import { PostComponent } from './shared/components/post/post.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminLayoutComponent } from './admin/shared/components/admin-layout/adm
     EditPageComponent,
     DashboardPageComponent,
     LoginPageComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
