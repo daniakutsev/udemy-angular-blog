@@ -17,7 +17,6 @@ const routes: Routes = [
   {
     // @ts-ignore
     path: 'admin',
-    component: AdminLayoutComponent,
     loadChildren: () => import('./admin/admin.module').then(a => a.AdminModule)
   }
 ];
