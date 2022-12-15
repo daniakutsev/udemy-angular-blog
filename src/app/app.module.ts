@@ -12,7 +12,7 @@ import { DashboardPageComponent } from './admin/dashboard-page/dashboard-page.co
 import { LoginPageComponent } from './admin/login-page/login-page.component';
 import { AdminLayoutComponent } from './admin/shared/components/admin-layout/admin-layout.component';
 import { PostComponent } from './shared/components/post/post.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -27,11 +27,12 @@ import {ReactiveFormsModule} from "@angular/forms";
     AdminLayoutComponent,
     PostComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
