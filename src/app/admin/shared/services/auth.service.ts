@@ -1,11 +1,12 @@
 import {Injectable} from "@angular/core";
-import {HttpClientModule} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {Observable, tap} from "rxjs";
 import {User} from "../../../shared/user.interface";
+import {environment} from "../../../../environments/environment";
 
 @Injectable()
 export class AuthService {
-  constructor(private http: HttpClientModule) {
+  constructor(private http: HttpClient) {
   }
 
   get token(): string {
@@ -13,9 +14,15 @@ export class AuthService {
   }
 
   login(user: User): Observable<any> {
-    // @ts-ignore
-    return this.http.post('', user)
+
+    return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`, user)
+      .pipe(
+        tap(
+          this.setToken
+        )
+      )
   }
+
 
   logout() {
 
@@ -25,8 +32,9 @@ export class AuthService {
     return !!this.token
   }
 
-  private setToken() {
-
+  // @ts-ignore
+  private setToken(response) {
+    console.log(response)
   }
 
 }
