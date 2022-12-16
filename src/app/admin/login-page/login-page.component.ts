@@ -31,8 +31,6 @@ export class LoginPageComponent implements OnInit {
 
   submit() {
 
-    // @ts-ignore
-     console.log(this.form.get('password').errors.minlength.requiredLength)
     console.log(this.form)
     if (this.form.invalid) {
       return
