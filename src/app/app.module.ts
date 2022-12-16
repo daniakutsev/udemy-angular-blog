@@ -13,6 +13,7 @@ import { LoginPageComponent } from './admin/login-page/login-page.component';
 import { AdminLayoutComponent } from './admin/shared/components/admin-layout/admin-layout.component';
 import { PostComponent } from './shared/components/post/post.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
