@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Post} from "../../shared/user.interface";
 
 @Component({
   selector: 'app-create-page',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePageComponent implements OnInit {
 
-  constructor() { }
+  // @ts-ignore
+  form: FormGroup;
 
-  ngOnInit(): void {
+  constructor() {
+  }
+
+  ngOnInit() {
+    this.form = new FormGroup({
+      title: new FormControl(null, Validators.required),
+      text: new FormControl(null, Validators.required),
+      author: new FormControl(null, Validators.required)
+    })
+  }
+
+  submit() {
+    if (this.form.invalid) {
+      console.log(1)
+      return
+    }
+
+    const post: Post = {
+      title: this.form.value.title,
+      author: this.form.value.author,
+      text: this.form.value.text,
+      date: new Date()
+    }
+    console.log(post)
   }
 
 }

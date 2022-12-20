@@ -21,11 +21,6 @@ import {SharedModule} from "./shared/shared.module";
     HomePageComponent,
     PostPageComponent,
     MainLayoutComponent,
-    CreatePageComponent,
-    EditPageComponent,
-    DashboardPageComponent,
-    LoginPageComponent,
-    AdminLayoutComponent,
     PostComponent
   ],
   imports: [
