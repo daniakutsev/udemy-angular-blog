@@ -46,6 +46,9 @@ export class PostsService {
       }))
   }
 
+  update(post: Post): Observable<Post> {
+    return this.http.patch<Post>(`${environment.FbDbUrl}/posts/${post.id}.json`, post)
+  }
 
   remove(id: string): Observable<void> {
     return this.http.delete<void>(`${environment.FbDbUrl}/posts/${id}.json`)
