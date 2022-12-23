@@ -21,10 +21,10 @@
       <td>
         <button
           class="btn btn-link open"
-          [routerLink]="['/admin','posts',post.id,'edit']"
+          [routerLink]="['/admin','post',post.id,'edit']"
         >Open
         </button>
-        <a>Delete</a>
+        <a (click)="remove(post.id)">Delete</a>
       </td>
     </tr>
     </tbody>
