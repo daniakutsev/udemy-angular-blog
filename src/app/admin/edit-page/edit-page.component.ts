@@ -3,7 +3,7 @@ import {PostsService} from "../shared/posts.service";
 import {ActivatedRoute, Params} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Subscription, switchMap} from "rxjs";
-import {Post} from "../../shared/user.interface";
+import {Post} from "../../shared/interfaces";
 
 @Component({
   selector: 'app-edit-page',

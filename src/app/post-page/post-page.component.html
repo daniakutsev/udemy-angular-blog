@@ -1,23 +1,22 @@
-<div class="post">
-  <div class="header">
+<div *ngIf="post$ | async as post; else loading">
+  <div class="post">
+    <div class="header">
+      <h1>{{ post.title }}</h1>
 
-    <h1>{{post.title}}</h1>
-    <button
-      routerLink="/"
-      class="btn btn-link"
-    >
-      To main
-    </button>
+      <button routerLink="/" class="btn btn-link">На главную</button>
+    </div>
+
+    <div class="info">
+      <strong>{{ post.author }}</strong>
+      <small>{{ post.date }}</small>
+    </div>
+
+    <div>
+     <p>{{post.text}}</p>
+    </div>
   </div>
-
-  <div class="info">
-    <strong>{{post.author}}</strong>
-    <small>{{post.date}}</small>
-  </div>
-
-  <div class="">
-    {{post.text}}
-  </div>
-
-
 </div>
+
+<ng-template #loading>
+  <p class="text-center">Загружаю пост...</p>
+</ng-template>
