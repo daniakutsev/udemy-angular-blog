@@ -1,7 +1,7 @@
 <div class="post">
   <div class="header">
 
-    <h1>Post title</h1>
+    <h1>{{post.title}}</h1>
     <button
       routerLink="/"
       class="btn btn-link"
@@ -11,16 +11,12 @@
   </div>
 
   <div class="info">
-    <strong>Author</strong>
-    <small>14.12.2022</small>
+    <strong>{{post.author}}</strong>
+    <small>{{post.date}}</small>
   </div>
 
   <div class="">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quos!</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quos!</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quos!</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quos!</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quos!</p>
+    {{post.text}}
   </div>
 
 
